@@ -1,0 +1,46 @@
+<div class="chat-container">
+
+  <!-- Display mode indicator -->
+  @if(useProjectContext){
+    <div class="project-mode">🟢 Project Context Mode Enabled</div>
+  }@else(){
+    <div class="chat-mode">⚪ General Chat Mode Enabled</div>
+  }
+
+  <!-- Messages -->
+  <div class="messages">
+    @for(msg of messages; track msg) {
+      <div class="message" [class.user]="msg.sender==='User'">
+        <div class="avatar">{{ msg.sender==='User' ? 'U' : 'B' }}</div>
+        <div class="bubble">
+          <div class="text">{{ msg.text }}</div>
+          <div class="timestamp" [class.you]="msg.sender==='User'">{{ msg.timestamp | date:'shortTime' }}</div>
+        </div>
+      </div>
+    }
+  </div>
+
+  
+  <!-- Input + Buttons -->
+  <div class="input-area">
+    <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." (keyup.enter)="sendMessage()" />
+    <button (click)="sendMessage()">Send</button>
+    <button (click)="clearMessages()">Clear</button>
+  </div>
+
+  <!-- Project Context Toggle -->
+  <label>
+    <input type="checkbox" [(ngModel)]="useProjectContext" /> Use project context
+  </label>
+  
+  <!-- Project loader -->
+  <div class="project-loader">
+    <input type="text" [(ngModel)]="projectPath" placeholder="Enter project folder path..." />
+    <select [(ngModel)]="projectType">
+      <option value="angular">Angular</option>
+      <option value="dotnet">.NET</option>
+    </select>
+    <button (click)="loadProject(projectPath, projectType)">Load Project</button>
+  </div>
+
+</div>

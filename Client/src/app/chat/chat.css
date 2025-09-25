@@ -1,0 +1,101 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.chat-mode {
+  text-align: center;
+  padding: 4px;
+  font-weight: bold;
+  background: #c4fbba;
+}
+
+.project-mode {
+  text-align: center;
+  padding: 4px;
+  font-weight: bold;
+  background: #f97d7d;
+}
+
+.project-loader {
+  display: flex;
+  gap: 8px;
+  padding: 4px 8px;
+}
+
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  background: #666;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+}
+
+.bubble {
+  max-width: 70%;
+  background: #eee;
+  padding: 8px 12px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.message.user .bubble {
+  background: #007bff;
+  color: white;
+}
+
+.timestamp {
+  font-size: 0.7em;
+  color: gray;
+  margin-top: 2px;
+  text-align: right;
+}
+
+.timestamp.you {
+  color: rgb(219 219 219);
+}
+
+.bubble .text {
+  white-space: pre-wrap;
+}
+
+.input-area {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

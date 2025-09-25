@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "LocalChatBotBackend.Controllers.ChatController",
+    "Method": "Ask",
+    "RelativePath": "api/Chat/ask",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LocalChatBotBackend.Controllers.ChatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LocalChatBotBackend.Controllers.ProjectController",
+    "Method": "Analyze",
+    "RelativePath": "api/project/analyze",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LocalChatBotBackend.Controllers.ProjectRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
