@@ -55,7 +55,7 @@ Optional: GPU is recommended for faster LLM response times.
    dotnet restore
 4. **Start Ollama local server** 
     
-    Ensure Ollama desktop is running, or start the server manually: 
+   Ensure Ollama desktop is running, or start the server manually: 
    ```
    ollama serve
    ```
@@ -63,7 +63,7 @@ Optional: GPU is recommended for faster LLM response times.
 5. **Run the .NET backend** 
 
    ```
-   dotnet run --project Server/LocalChatBotBackend.csproj
+   dotnet run
    ```
    By default, it should listen at http://localhost:5057.
 6. **Run the Angular frontend** 
@@ -147,19 +147,21 @@ sequenceDiagram
     ProjectCtrl ->> PAS: Analyze and parse project
     PAS -->> ProjectCtrl: Return analyzed project JSON
     ProjectCtrl -->> CS: Deliver back response
-    CS -->> UI: Display project analysis
+    CS -->> UI: Return project analysis
     end
 
     %% Chat flow
     rect rgba(201, 201, 247, 0.2)
     UI ->> CS: Send chat prompt
     CS ->> ChatCtrl: Forward request<br>Route to endpoint
-    ChatCtrl ->> LLM: Send prompt via OllamaApiClient
+    ChatCtrl ->> LLM: Send prompt to LLM
     LLM -->> ChatCtrl: Return generated response
     ChatCtrl -->> CS: Deliver back response
     CS -->> UI: Display chat response
     end
 ```
+
+---
 
 ## Notes & Limitations
 
