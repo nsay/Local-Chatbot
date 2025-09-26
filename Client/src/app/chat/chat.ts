@@ -31,16 +31,17 @@ import { ChatService } from '../services/chat.service';
 export class Chat {
   messages: { sender: string; text: string; timestamp: Date }[] = []; // Array to hold chat messages
   newMessage: string = ''; // Holds the new message typed by the user
-  useProjectContext = false; // mode flag
-  isLoading = false; // loading flag
-
+  useProjectContext: boolean = false; // mode flag
+  isLoading: boolean = false; // loading flag
+  progressLoading: number = 0; // for loading bar
+  
   // Holds the currently loaded project's path, type, and JSON content
   projectPath: string = '';
   projectType: string = 'angular';
   projectJson: any = {};
-
+  private progressInterval: any;
   constructor(private chatService: ChatService) {}
-
+  
   /**
    * Handles sending a message from the user to the chatbot.
    * Adds the user's message to the chat window, then sends it to the backend.
@@ -60,6 +61,13 @@ export class Chat {
 
     this.newMessage = ''; // Clear input field
     this.isLoading = true;
+    this.progressLoading = 0;
+
+    // Animate progress bar
+    this.progressInterval = setInterval(() => {
+      this.progressLoading += Math.random() * 5;   // random increment
+      if (this.progressLoading >= 100) this.progressLoading = 99; // don't reach 100 until done
+    }, 200);
 
     // Call ChatService to send question to LLM
     this.chatService.askBot(userQuestion, projectData, this.useProjectContext).subscribe({
@@ -67,13 +75,13 @@ export class Chat {
         // Append bot's response to chat
         this.messages.push({ sender: 'Bot', text: res.response, timestamp: new Date() });
         this.scrollToBottom();
-        this.isLoading = false;
+       this.stopLoading();
       },
       error: () => {
         // Show error message if backend fails
         this.messages.push({ sender: 'Bot', text: 'Error contacting LLM.', timestamp: new Date() });
         this.scrollToBottom();
-        this.isLoading = false;
+        this.stopLoading();
       },
     });
   }
@@ -97,7 +105,7 @@ export class Chat {
           timestamp: new Date(),
         });
         this.scrollToBottom();
-        this.isLoading = false;
+        this.stopLoading();
       },
       error: () => {
         this.messages.push({
@@ -106,9 +114,18 @@ export class Chat {
           timestamp: new Date(),
         });
         this.scrollToBottom();
-        this.isLoading = false;
+        this.stopLoading();
       },
     });
+  }
+
+  /**
+   * Ends loading gif
+   */
+  private stopLoading() {
+    this.isLoading = false;
+    clearInterval(this.progressInterval);
+    this.progressLoading = 0;
   }
 
   /**
