@@ -53,13 +53,10 @@ namespace LocalChatBotBackend.Services
 
                 if (content.Contains("@Component"))
                     components.Add(new { name, path = file, content });
-
                 else if (content.Contains("@Injectable"))
                     services.Add(new { name, path = file, content });
-
                 else if (content.Contains("interface "))
                     interfaces.Add(new { name, path = file, content });
-
                 else if (content.Contains("NgModule"))
                     modules.Add(new { name, path = file, content });
             }
@@ -96,13 +93,10 @@ namespace LocalChatBotBackend.Services
 
                 if (file.EndsWith("Controller.cs"))
                     controllers.Add(new { name, path = file, content });
-
                 else if (file.Contains(Path.Combine("Services", "")))
                     servicesList.Add(new { name, path = file, content });
-
                 else if (file.Contains(Path.Combine("Models", "")))
                     models.Add(new { name, path = file, content });
-
                 else if (file.Contains(Path.Combine("Interfaces", "")))
                     interfaces.Add(new { name, path = file, content });
             }

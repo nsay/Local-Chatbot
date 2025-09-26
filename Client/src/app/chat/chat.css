@@ -3,44 +3,45 @@
   flex-direction: column;
   height: 90vh;
   margin: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-family: Arial, sans-serif;
+  border-radius: 16px;
   overflow: hidden;
+  background: #f9f9fb;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
-.chat-mode {
-  text-align: center;
-  padding: 4px;
-  font-weight: bold;
-  background: #c4fbba;
+.mode-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .project-mode {
-  text-align: center;
-  padding: 4px;
-  font-weight: bold;
-  background: #f97d7d;
+  background: #e3f2fd;
+  color: #1976d2;
 }
 
-.project-loader {
-  display: flex;
-  gap: 8px;
-  padding: 4px 8px;
+.general-mode {
+  background: #a4dbbe;
+  color: #00642e;
 }
 
 .messages {
   flex: 1;
-  padding: 10px;
+  padding: 16px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
 .message {
   display: flex;
   align-items: flex-end;
-  margin-bottom: 10px;
+  gap: 8px;
 }
 
 .message.user {
@@ -48,54 +49,61 @@
 }
 
 .avatar {
-  background: #666;
-  color: white;
-  width: 32px;
-  height: 32px;
+  background: #fff;
+  border: 2px solid #ddd;
   border-radius: 50%;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .bubble {
   max-width: 70%;
-  background: #eee;
-  padding: 8px 12px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.message.user .bubble {
-  background: #007bff;
-  color: white;
-}
-
-.timestamp {
-  font-size: 0.7em;
-  color: gray;
-  margin-top: 2px;
-  text-align: right;
-}
-
-.timestamp.you {
-  color: rgb(219 219 219);
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .bubble .text {
   white-space: pre-wrap;
 }
 
+.message.user .bubble {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
+}
+
+.timestamp {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
 .input-area {
   display: flex;
   gap: 8px;
-  padding: 8px;
+  padding: 12px;
+  border-top: 1px solid #eee;
 }
 
 .input-area input {
   flex: 1;
-  padding: 6px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 10px 12px;
+  border-radius: 24px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.project-loader {
+  margin: 12px;
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }

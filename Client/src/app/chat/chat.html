@@ -1,46 +1,50 @@
 <div class="chat-container">
 
-  <!-- Display mode indicator -->
-  @if(useProjectContext){
-    <div class="project-mode">🟢 Project Context Mode Enabled</div>
-  }@else(){
-    <div class="chat-mode">⚪ General Chat Mode Enabled</div>
-  }
+  <!-- Mode Indicator -->
+  <div class="mode-indicator" [ngClass]="useProjectContext ? 'project-mode' : 'general-mode'">
+    <mat-icon>{{ useProjectContext ? 'folder' : 'chat' }}</mat-icon>
+    <span>{{ useProjectContext ? 'Project Context Mode' : 'General Chat Mode' }}</span>
+  </div>
 
   <!-- Messages -->
   <div class="messages">
     @for(msg of messages; track msg) {
       <div class="message" [class.user]="msg.sender==='User'">
-        <div class="avatar">{{ msg.sender==='User' ? 'U' : 'B' }}</div>
+        <div class="avatar">
+          <mat-icon>{{ msg.sender==='User' ? 'person' : 'smart_toy' }}</mat-icon>
+        </div>
         <div class="bubble">
-          <div class="text">{{ msg.text }}</div>
+          <!-- <div class="text">{{ msg.text }}</div> -->
+          <markdown [data]="msg.text" [inline]="true" class="text"></markdown>
           <div class="timestamp" [class.you]="msg.sender==='User'">{{ msg.timestamp | date:'shortTime' }}</div>
         </div>
       </div>
     }
   </div>
 
-  
-  <!-- Input + Buttons -->
-  <div class="input-area">
-    <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." (keyup.enter)="sendMessage()" />
-    <button (click)="sendMessage()">Send</button>
-    <button (click)="clearMessages()">Clear</button>
-  </div>
+  <!-- Input Area -->
+  <div [ngClass]="useProjectContext ? 'project-mode' : 'general-mode'">
+    <!-- Chat Area -->
+    <div class="input-area">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." (keyup.enter)="sendMessage()" />
+      <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+      <button mat-stroked-button color="warn" (click)="clearMessages()">Clear</button>
+    </div>
 
-  <!-- Project Context Toggle -->
-  <label>
-    <input type="checkbox" [(ngModel)]="useProjectContext" /> Use project context
-  </label>
-  
-  <!-- Project loader -->
-  <div class="project-loader">
-    <input type="text" [(ngModel)]="projectPath" placeholder="Enter project folder path..." />
-    <select [(ngModel)]="projectType">
-      <option value="angular">Angular</option>
-      <option value="dotnet">.NET</option>
-    </select>
-    <button (click)="loadProject(projectPath, projectType)">Load Project</button>
+    <!-- Project Loader -->
+    <div class="input-area">
+      <input matInput [(ngModel)]="projectPath" placeholder="Project folder path" />
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="projectType">
+        <mat-radio-button value="angular">Angular</mat-radio-button>
+        <mat-radio-button value="dotnet">.NET</mat-radio-button>
+      </mat-radio-group>
+      <button mat-flat-button color="accent" (click)="loadProject(projectPath, projectType)">Load</button>
+    </div>
+
+    <!-- Use Project Context -->
+    <div class="input-area">
+      <mat-checkbox [aria-label]="'hi'" [(ngModel)]="useProjectContext">Use Project Context</mat-checkbox>
+    </div>
   </div>
 
 </div>
