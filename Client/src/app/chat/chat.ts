@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MarkdownModule } from 'ngx-markdown';
 import { ChatService } from '../services/chat.service';
 
@@ -14,7 +15,15 @@ import { ChatService } from '../services/chat.service';
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatIconModule, MatRadioModule, MatCheckboxModule, MarkdownModule],
+  imports: [
+    CommonModule, 
+    FormsModule, 
+    MatIconModule, 
+    MatRadioModule, 
+    MatCheckboxModule, 
+    MatProgressBarModule, 
+    MarkdownModule
+  ],
   templateUrl: 'chat.html',
   styleUrls: ['chat.css'],
 })
@@ -22,7 +31,8 @@ import { ChatService } from '../services/chat.service';
 export class Chat {
   messages: { sender: string; text: string; timestamp: Date }[] = []; // Array to hold chat messages
   newMessage: string = ''; // Holds the new message typed by the user
-  useProjectContext = false; // flag to indicate mode
+  useProjectContext = false; // mode flag
+  isLoading = false; // loading flag
 
   // Holds the currently loaded project's path, type, and JSON content
   projectPath: string = '';
@@ -49,6 +59,7 @@ export class Chat {
     const projectData = this.useProjectContext ? JSON.stringify(this.projectJson) : "{}";
 
     this.newMessage = ''; // Clear input field
+    this.isLoading = true;
 
     // Call ChatService to send question to LLM
     this.chatService.askBot(userQuestion, projectData, this.useProjectContext).subscribe({
@@ -56,11 +67,13 @@ export class Chat {
         // Append bot's response to chat
         this.messages.push({ sender: 'Bot', text: res.response, timestamp: new Date() });
         this.scrollToBottom();
+        this.isLoading = false;
       },
       error: () => {
         // Show error message if backend fails
         this.messages.push({ sender: 'Bot', text: 'Error contacting LLM.', timestamp: new Date() });
         this.scrollToBottom();
+        this.isLoading = false;
       },
     });
   }
@@ -71,6 +84,7 @@ export class Chat {
    */
   loadProject(path: string, type: string) {
     if (!path.trim()) return;
+    this.isLoading = true;
 
     // Call ChatService to send file path and file type to LLM
     this.chatService.getProjectContent(path, type).subscribe({
@@ -83,6 +97,7 @@ export class Chat {
           timestamp: new Date(),
         });
         this.scrollToBottom();
+        this.isLoading = false;
       },
       error: () => {
         this.messages.push({
@@ -91,6 +106,7 @@ export class Chat {
           timestamp: new Date(),
         });
         this.scrollToBottom();
+        this.isLoading = false;
       },
     });
   }

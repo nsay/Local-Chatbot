@@ -22,6 +22,11 @@
     }
   </div>
 
+  <!-- Loading bar -->
+  @if(isLoading){
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+
   <!-- Input Area -->
   <div [ngClass]="useProjectContext ? 'project-mode' : 'general-mode'">
     <!-- Chat Area -->
