@@ -32,8 +32,8 @@
     <!-- Chat Area -->
     <div class="input-area">
       <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." (keyup.enter)="sendMessage()" />
-      <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
-      <button mat-stroked-button color="warn" (click)="clearMessages()">Clear</button>
+      <button matButton="filled" color="primary" (click)="sendMessage()">Send<mat-icon>send</mat-icon></button>
+      <button matButton="outlined" color="warn" (click)="clearMessages()">Clear<mat-icon>delete</mat-icon></button>
     </div>
 
     <!-- Project Loader -->
@@ -43,7 +43,7 @@
         <mat-radio-button value="angular">Angular</mat-radio-button>
         <mat-radio-button value="dotnet">.NET</mat-radio-button>
       </mat-radio-group>
-      <button mat-flat-button color="accent" (click)="loadProject(projectPath, projectType)">Load</button>
+      <button matButton="filled" color="primary" (click)="loadProject(projectPath, projectType)">Load<mat-icon>upload</mat-icon></button>
     </div>
 
     <!-- Use Project Context -->

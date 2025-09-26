@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -19,6 +20,7 @@ import { ChatService } from '../services/chat.service';
     CommonModule, 
     FormsModule, 
     MatIconModule, 
+    MatButtonModule,
     MatRadioModule, 
     MatCheckboxModule, 
     MatProgressBarModule, 
