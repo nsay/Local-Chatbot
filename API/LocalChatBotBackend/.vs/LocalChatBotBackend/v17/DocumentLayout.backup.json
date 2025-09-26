@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|c:\\users\\srx90217\\documents\\personal projects\\local-chatbot\\api\\localchatbotbackend\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|c:\\users\\srx90217\\documents\\personal projects\\local-chatbot\\api\\localchatbotbackend\\services\\projectanalyzerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|solutionrelative:services\\projectanalyzerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|c:\\users\\srx90217\\documents\\personal projects\\local-chatbot\\api\\localchatbotbackend\\models\\projectrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|solutionrelative:models\\projectrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|c:\\users\\srx90217\\documents\\personal projects\\local-chatbot\\api\\localchatbotbackend\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|solutionrelative:controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|c:\\users\\srx90217\\documents\\personal projects\\local-chatbot\\api\\localchatbotbackend\\models\\chatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|solutionrelative:models\\chatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|c:\\users\\srx90217\\documents\\personal projects\\local-chatbot\\api\\localchatbotbackend\\services\\projectanalyzerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|solutionrelative:services\\projectanalyzerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|c:\\users\\srx90217\\documents\\personal projects\\local-chatbot\\api\\localchatbotbackend\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|solutionrelative:controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|c:\\users\\srx90217\\documents\\personal projects\\local-chatbot\\api\\localchatbotbackend\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBB0F2A1-14B1-D74C-A869-907A3D705F0B}|LocalChatBotBackend.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,51 +39,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ProjectRequest.cs",
+              "DocumentMoniker": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Models\\ProjectRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ProjectRequest.cs",
+              "ToolTip": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Models\\ProjectRequest.cs",
+              "RelativeToolTip": "Models\\ProjectRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T14:39:26.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ChatRequest.cs",
               "DocumentMoniker": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Models\\ChatRequest.cs",
               "RelativeDocumentMoniker": "Models\\ChatRequest.cs",
               "ToolTip": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Models\\ChatRequest.cs",
               "RelativeToolTip": "Models\\ChatRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-25T19:12:31.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ProjectController.cs",
               "DocumentMoniker": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Controllers\\ProjectController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProjectController.cs",
               "ToolTip": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Controllers\\ProjectController.cs",
               "RelativeToolTip": "Controllers\\ProjectController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAswBEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T16:10:32.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ProjectAnalyzerService.cs",
               "DocumentMoniker": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Services\\ProjectAnalyzerService.cs",
               "RelativeDocumentMoniker": "Services\\ProjectAnalyzerService.cs",
               "ToolTip": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Services\\ProjectAnalyzerService.cs",
               "RelativeToolTip": "Services\\ProjectAnalyzerService.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAwwGUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAcwG8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T16:09:51.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ChatController.cs",
               "DocumentMoniker": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
               "ToolTip": "C:\\Users\\srx90217\\Documents\\Personal Projects\\Local-Chatbot\\API\\LocalChatBotBackend\\Controllers\\ChatController.cs",
               "RelativeToolTip": "Controllers\\ChatController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAewBoAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T15:57:42.779Z",
               "EditorCaption": ""

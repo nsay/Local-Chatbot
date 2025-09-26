@@ -46,6 +46,7 @@ C:\Users\srx90217\Documents\Personal Projects\Local-Chatbot\API\LocalChatBotBack
 C:\Users\srx90217\Documents\Personal Projects\Local-Chatbot\API\LocalChatBotBackend\obj\Debug\net9.0\LocalChatBotBackend.csproj.CoreCompileInputs.cache
 C:\Users\srx90217\Documents\Personal Projects\Local-Chatbot\API\LocalChatBotBackend\obj\Debug\net9.0\LocalChatBotBackend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\srx90217\Documents\Personal Projects\Local-Chatbot\API\LocalChatBotBackend\obj\Debug\net9.0\LocalChatBotBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\srx90217\Documents\Personal Projects\Local-Chatbot\API\LocalChatBotBackend\obj\Debug\net9.0\LocalChatBotBackend.sourcelink.json
 C:\Users\srx90217\Documents\Personal Projects\Local-Chatbot\API\LocalChatBotBackend\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\srx90217\Documents\Personal Projects\Local-Chatbot\API\LocalChatBotBackend\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\srx90217\Documents\Personal Projects\Local-Chatbot\API\LocalChatBotBackend\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json

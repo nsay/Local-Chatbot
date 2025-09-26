@@ -51,7 +51,7 @@ Optional: GPU is recommended for faster LLM response times.
    npm Install
 3. **Restore .NET dependencies**  
    ```
-   cd ../API
+   cd ../API/LocalChatBotBackend
    dotnet restore
 4. **Start Ollama local server** 
     
@@ -124,11 +124,42 @@ Optional: GPU is recommended for faster LLM response times.
     - Prompts are constructed dynamically based on Project Context Mode.
     - The LLM analyzes the full project source code or responds to general queries.
 
-4. Flow
+4. Visual Flow Diagram
 
-    - Angular UI → ChatService (HTTP POST) → Backend API → ProjectAnalyzerService / ChatController → Ollama LLM → Response → UI
+```mermaid
+sequenceDiagram
+    box Frontend (Angular)
+        participant UI as UI
+        participant CS as ChatService
+    end
 
----
+    box Backend (.NET)
+        participant ProjectCtrl as ProjectController
+        participant ChatCtrl as ChatController
+        participant PAS as ProjectAnalyzerService
+        participant LLM as Ollama LLM
+    end
+
+    %% Project analysis flow
+    rect rgba(138, 145, 138, 0.2)
+    UI ->> CS: Send project analysis request
+    CS ->> ProjectCtrl: Forward request<br>Route to endpoint
+    ProjectCtrl ->> PAS: Analyze and parse project
+    PAS -->> ProjectCtrl: Return analyzed project JSON
+    ProjectCtrl -->> CS: Deliver back response
+    CS -->> UI: Display project analysis
+    end
+
+    %% Chat flow
+    rect rgba(201, 201, 247, 0.2)
+    UI ->> CS: Send chat prompt
+    CS ->> ChatCtrl: Forward request<br>Route to endpoint
+    ChatCtrl ->> LLM: Send prompt via OllamaApiClient
+    LLM -->> ChatCtrl: Return generated response
+    ChatCtrl -->> CS: Deliver back response
+    CS -->> UI: Display chat response
+    end
+```
 
 ## Notes & Limitations
 
@@ -141,4 +172,3 @@ Optional: GPU is recommended for faster LLM response times.
 - For large projects, consider batching or partial folder uploads.
 
 - Ensure that project folders are accessible (no restricted permissions).
-
